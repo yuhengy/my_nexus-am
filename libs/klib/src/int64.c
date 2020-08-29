@@ -281,3 +281,20 @@ __umoddi3(du_int a, du_int b)
     __udivmoddi4(a, b, &r);
     return r;
 }
+
+// for more details, refer to
+// https://gcc.gnu.org/onlinedocs/gccint/Integer-library-routines.html
+
+int __clzsi2 (unsigned int a) {
+  if (a == 0) return 0;
+  int bit = 31;
+  while ((a & (1 << bit)) == 0) bit --;
+  return bit;
+}
+
+int __ctzsi2 (unsigned int a) {
+  if (a == 0) return 0;
+  int bit = 0;
+  while ((a & (1 << bit)) == 0) bit ++;
+  return bit;
+}
