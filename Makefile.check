@@ -21,6 +21,12 @@ ARCH_SPLIT  = $(subst -, ,$(ARCH))
 ISA        ?= $(word 1,$(ARCH_SPLIT))
 PLATFORM   ?= $(word 2,$(ARCH_SPLIT))
 
+$(warning "ARCH is $(ARCH)" ) 
+$(warning "ISA is $(ISA)" ) 
+## Noting use ARCH=native will not provide ISA
+$(warning "Platform is $(PLATFORM)" ) 
+
+
 include $(AM_HOME)/am/arch/$(ARCH).mk
 
 endif

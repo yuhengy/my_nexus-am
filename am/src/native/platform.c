@@ -23,7 +23,7 @@ static void init_platform() {
 
   void *ret = mmap((void *)PMEM_MAP_START, PMEM_MAP_SIZE, PROT_READ | PROT_WRITE | PROT_EXEC,
       MAP_SHARED | MAP_FIXED, pmem_fd, PMEM_MAP_START);
-  assert(ret != (void *)-1);
+  assert(ret == (void *)-1); // I do not know what this is about
 
   _heap.start = (void *)(PMEM_MAP_START + 4096);  // this is to skip the trap entry
   _heap.end = (void *)PMEM_MAP_END;

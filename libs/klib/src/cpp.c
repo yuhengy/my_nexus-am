@@ -1,6 +1,7 @@
 #include "klib.h"
 
-#ifndef __ISA_NATIVE__
+#ifndef __ISA_NATIVE__ 
+//I do not know why this **sometime** have problem, eventhough Makefile.compile define this
 
 void __dso_handle() {
 }
